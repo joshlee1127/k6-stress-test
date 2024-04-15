@@ -1,0 +1,52 @@
+
+          /\      |‾‾| /‾‾/   /‾‾/   
+     /\  /  \     |  |/  /   /  /    
+    /  \/    \    |     (   /   ‾‾\  
+   /          \   |  |\  \ |  (‾)  | 
+  / __________ \  |__| \__\ \_____/ .io
+
+  execution: local
+     script: .\stress-testing.js
+     output: -
+
+  scenarios: (100.00%) 1 scenario, 1000 max VUs, 31s max duration (incl. graceful stop):
+           * constant_load: 10.00 iterations/s for 1s (maxVUs: 1000, gracefulStop: 30s)
+
+
+running (01.0s), 0010/1000 VUs, 0 complete and 0 interrupted iterations
+constant_load   [  97% ] 0010/1000 VUs  1.0s/1s  10.00 iters/s
+
+running (02.0s), 0002/1000 VUs, 9 complete and 0 interrupted iterations
+constant_load ↓ [ 100% ] 0010/1000 VUs  1s  10.00 iters/s
+
+     █ Login
+
+       ✓ Login for accessToken
+
+     █ Post galaxy Login Url
+
+       ✓ Verify Galaxy Response
+       ✓ Verify Galaxy UserSessionToken
+
+     checks.........................: 100.00% ✓ 33       ✗ 0     
+     data_received..................: 135 kB  46 kB/s
+     data_sent......................: 23 kB   7.7 kB/s
+     group_duration.................: avg=580.47ms min=186.46ms med=691.09ms max=1.73s    p(90)=827.41ms p(95)=1.17s   
+     http_req_blocked...............: avg=118.15ms min=13.16ms  med=23.81ms  max=1.03s    p(90)=105.66ms p(95)=983.32ms
+     http_req_connecting............: avg=98.96ms  min=4.57ms   med=6.6ms    max=1.02s    p(90)=10ms     p(95)=963.96ms
+     http_req_duration..............: avg=157.69ms min=59.82ms  med=164.8ms  max=301.9ms  p(90)=284.47ms p(95)=299.15ms
+       { expected_response:true }...: avg=157.69ms min=59.82ms  med=164.8ms  max=301.9ms  p(90)=284.47ms p(95)=299.15ms
+     http_req_failed................: 0.00%   ✓ 0        ✗ 22    
+     http_req_receiving.............: avg=228.6µs  min=0s       med=0s       max=1.12ms   p(90)=998.59µs p(95)=1.01ms  
+     http_req_sending...............: avg=221.45µs min=0s       med=0s       max=1.16ms   p(90)=637.72µs p(95)=716.51µs
+     http_req_tls_handshaking.......: avg=18.77ms  min=7.2ms    med=15.82ms  max=104.72ms p(90)=23.69ms  p(95)=28.02ms 
+     http_req_waiting...............: avg=157.24ms min=59.82ms  med=164.23ms max=299.89ms p(90)=284.47ms p(95)=298.56ms
+     http_reqs......................: 22      7.525238/s
+     iteration_duration.............: avg=1.16s    min=885.87ms med=968.13ms max=1.91s    p(90)=1.9s     p(95)=1.9s    
+     iterations.....................: 11      3.762619/s
+     vus............................: 2       min=2      max=10  
+     vus_max........................: 1000    min=1000   max=1000
+
+
+running (02.9s), 0000/1000 VUs, 11 complete and 0 interrupted iterations
+constant_load ✓ [ 100% ] 0000/1000 VUs  1s  10.00 iters/s

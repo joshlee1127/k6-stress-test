@@ -1,0 +1,49 @@
+{
+	"id": "50929db1-3383-405e-902c-df3421f4f2be",
+	"name": "AWS - Galaxy - ECS - Prod",
+	"values": [
+		{
+			"key": "API-Protocol",
+			"value": "https",
+			"enabled": true
+		},
+		{
+			"key": "API-Hostname",
+			"value": "galaxy.beanfun.com/webapi",
+			"enabled": true
+		},
+		{
+			"key": "GameID",
+			"value": "888",
+			"enabled": true
+		},
+		{
+			"key": "GameToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyT2JqZWN0SUQiOjEwMDA0MywiVXNlclNlc3Npb25Ub2tlbiI6InNlc3NkOGFhZGUwNmU2NjcxMWJiNjAwNmFhYTAxODEyZmQzOCJ9.4wyMJavJO-qhSkQAOVpSBkujxSc6FETCa9Oyk1ft-Wc",
+			"enabled": true
+		},
+		{
+			"key": "GameToken--Key",
+			"value": "8e36f941960d7369e7bd61a231d82b23",
+			"enabled": true
+		},
+		{
+			"key": "UserObjectID",
+			"value": "100043",
+			"enabled": true
+		},
+		{
+			"key": "UserSessionToken",
+			"value": "sessd8aade06e66711bb6006aaa01812fd38",
+			"enabled": true
+		},
+		{
+			"key": "UserObjectName",
+			"value": "4014339789636608",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2024-02-29T09:19:55.700Z",
+	"_postman_exported_using": "Postman/10.23.5"
+}
