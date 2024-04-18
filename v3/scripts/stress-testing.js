@@ -38,9 +38,9 @@ export const options = {
             executor: "ramping-arrival-rate",
             startRate: 20, // 开始速率
             timeUnit: "1s", // 时间单位为秒
-            preAllocatedVUs: 50, // 预分配虚拟用户数
+            preAllocatedVUs: 20, // 预分配虚拟用户数
             stages: [
-                { duration: "600s", target: 50 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
+                { duration: "600s", target: 20 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
                 // { duration: "10s", target: 250 }, // 第二个阶段持续 10 秒，目标 TPS 为 10
                 // { duration: "10s", target: 300 }, // 第三个阶段持续 10 秒，目标 TPS 为 15
             ],
