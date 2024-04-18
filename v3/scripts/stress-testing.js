@@ -6,7 +6,7 @@ import { generateRandomString, jwtGalaxy } from "./jwt.js"
 // envVar 控制壓測prod或rc,
 // prod > 透過login bf取得accessToken來登入galaxy
 // rc   > 透過Guest帳號 (radom) 登入galaxy
-const envVar = "prod"
+const envVar = "rc"
 let galaxyBaseUrl
 let secretKey
 let gameId
