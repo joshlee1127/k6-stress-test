@@ -40,7 +40,7 @@ export const options = {
             timeUnit: "1s", // 时间单位为秒
             preAllocatedVUs: 10, // 预分配虚拟用户数
             stages: [
-                { duration: "120s", target: 20 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
+                { duration: "120s", target: 50 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
                 // { duration: "10s", target: 250 }, // 第二个阶段持续 10 秒，目标 TPS 为 10
                 // { duration: "10s", target: 300 }, // 第三个阶段持续 10 秒，目标 TPS 为 15
             ],
@@ -480,7 +480,7 @@ export default function () {
 
 // 行動技術部 銀河系統團隊有壓測腳本開發需求，需求如下，請協助開發，需求開發完成日期對方目前是期望在四月底，感恩~~
 
-// 1/User/Login 透過第三方帳號登入
+// 1/User/Login 透過第三方帳號登入 A
 // 2/User/VerifyToken 遊戲端驗證使用者登入權杖
 // 3/User/GetActionItem 定期取得使用者最新資訊
 // 4/User/RenewSessionToken 重新取得使用者 Token
@@ -489,4 +489,4 @@ export default function () {
 // 7/ItemToGame/Receipt/Verify 驗證道具置入收據
 // 8/ItemToGame/Done 遊戲伺服器回傳道具置入完成
 // 9/view/login/{銀河配發之專案代碼}?redirect_url={接收登入完成之網址} 共登串接導轉連結
-// 10/User/DeleteUser 刪除玩家在銀河系統內的帳號
+// 10/User/DeleteUser 刪除玩家在銀河系統內的帳號 I
