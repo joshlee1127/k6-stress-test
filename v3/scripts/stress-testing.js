@@ -40,7 +40,7 @@ export const options = {
             timeUnit: "1s", // 时间单位为秒
             preAllocatedVUs: 10, // 预分配虚拟用户数
             stages: [
-                { duration: "60s", target: 20 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
+                { duration: "120s", target: 20 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
                 // { duration: "10s", target: 250 }, // 第二个阶段持续 10 秒，目标 TPS 为 10
                 // { duration: "10s", target: 300 }, // 第三个阶段持续 10 秒，目标 TPS 为 15
             ],
