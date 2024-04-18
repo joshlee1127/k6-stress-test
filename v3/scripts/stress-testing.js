@@ -469,7 +469,7 @@ export default function () {
                         console.log("/User/DeleteUser !== 200", r.body)
                         return false
                     } else {
-                        console.log("/User/DeleteUser", r.body)
+                        // console.log("/User/DeleteUser", r.body)
                         return true
                     }
                 },
