@@ -1,0 +1,4 @@
+v3/data/**
+*.log
+v3/data/*
+**/data/

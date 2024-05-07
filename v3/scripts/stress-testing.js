@@ -12,19 +12,23 @@ let secretKey
 let gameId
 let gameName
 let guestMode
+let galaxyBaseUrlSwoole
 if (envVar === "prod") {
     galaxyBaseUrl = "https://galaxy.beanfun.com/webapi" //prod
+    galaxyBaseUrlSwoole = "https://galaxy.beanfun.com/webapi"
     secretKey = "d90375aed22401467f349b8d560b7265" //prod
     gameId = 919 //prod
     gameName = "SRE_NETWORK_TEST"
     guestMode = false
 } else {
+    galaxyBaseUrlSwoole = "https://galaxy.beanfun.com/webapircswoole"
     galaxyBaseUrl = "https://galaxy.beanfun.com/webapirc" //rc
     secretKey = "6d7f3e4c81c13e91e6f47f99545bb248" //rc
     gameId = 893 //rc
     gameName = "loadtesting"
     guestMode = true
 }
+
 // const JWT_HEADER_JSON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
 const openidBaseUrl = `https://openid.beanfun.com/api/SuperTest?clientId=d5d74b44-2fdf-49c2-a7e8-41905d21f313`
 // const openidQueryToken = `https://openid.beanfun.com/api/accessToken?token=`
@@ -40,7 +44,7 @@ export const options = {
             timeUnit: "1s", // 时间单位为秒
             preAllocatedVUs: 20, // 预分配虚拟用户数
             stages: [
-                { duration: "600s", target: 20 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
+                { duration: "60s", target: 20 }, // 第一个阶段持续 10 秒，目标 TPS 为 5
                 // { duration: "10s", target: 250 }, // 第二个阶段持续 10 秒，目标 TPS 为 10
                 // { duration: "10s", target: 300 }, // 第三个阶段持续 10 秒，目标 TPS 为 15
             ],
@@ -117,7 +121,8 @@ export default function () {
     }
     // 1 /User/Login 透過第三方帳號登入 Session
     group("/User/Login", function () {
-        const galaxyLoginUrl = galaxyBaseUrl + "/User/Login"
+        const galaxyLoginUrl = galaxyBaseUrlSwoole + "/User/Login"
+
         const myUUID = uuidv4()
         let body = {}
         if (guestMode) {
