@@ -121,7 +121,7 @@ export default function () {
     }
     // 1 /User/Login 透過第三方帳號登入 Session
     group("/User/Login", function () {
-        const galaxyLoginUrl = galaxyBaseUrlSwoole + "/User/Login"
+        const galaxyLoginUrl = galaxyBaseUrl + "/User/Login"
 
         const myUUID = uuidv4()
         let body = {}
@@ -177,7 +177,7 @@ export default function () {
     })
     // 2 /User/VerifyToken 遊戲端驗證使用者登入權杖
     group("/User/VerifyToken", function () {
-        const VerifyUrl = galaxyBaseUrl + "/User/VerifyToken"
+        const VerifyUrl = galaxyBaseUrlSwoole + "/User/VerifyToken"
 
         const body = {
             IsShowThirdPartyBinds: 1,
@@ -208,7 +208,7 @@ export default function () {
     })
     // 3 /User/GetActionItem 定期取得使用者最新資訊
     group("/User/GetActionItem", function () {
-        const VerifyUrl = galaxyBaseUrl + "/User/GetActionItem"
+        const VerifyUrl = galaxyBaseUrlSwoole + "/User/GetActionItem"
         const body = {}
         const gameToken = jwtGalaxy(body, secretKey)
         const headers = {
@@ -238,7 +238,8 @@ export default function () {
     })
     // 4 /User/RenewSessionToken 重新取得使用者 Token
     group("/User/RenewSessionToken", function () {
-        const renewSessionTokenUrl = galaxyBaseUrl + "/User/RenewSessionToken"
+        const renewSessionTokenUrl =
+            galaxyBaseUrlSwoole + "/User/RenewSessionToken"
         const body = {}
         const gameToken = jwtGalaxy(body, secretKey)
         const headers = {
@@ -297,7 +298,7 @@ export default function () {
     // })
     // 6 /Sandbox/Test/Order/Verify 雙平台商品購買
     group("/Sandbox/Test/Order/Verify", function () {
-        const VerifyUrl = galaxyBaseUrl + "/Sandbox/Test/Order/Verify"
+        const VerifyUrl = galaxyBaseUrlSwoole + "/Sandbox/Test/Order/Verify"
         const body = {
             Country: "TW",
             Currency: "TWD",
@@ -339,7 +340,7 @@ export default function () {
     })
     // 7 /Order/Receipt/Verify 遊戲伺服器驗證訂單付款有效性
     group("/Order/Receipt/Verify", function () {
-        const VerifyUrl = galaxyBaseUrl + "/Order/Receipt/Verify"
+        const VerifyUrl = galaxyBaseUrlSwoole + "/Order/Receipt/Verify"
         const body = {
             OrderID: orderId,
             PaymentType: 2,
@@ -368,7 +369,7 @@ export default function () {
     })
     // 8 /ItemToGame/Done 遊戲伺服器回傳道具置入完成
     group("/ItemToGame/Done", function () {
-        const VerifyUrl = galaxyBaseUrl + "/ItemToGame/Done"
+        const VerifyUrl = galaxyBaseUrlSwoole + "/ItemToGame/Done"
         const body = {
             Orders: [
                 {
@@ -409,12 +410,12 @@ export default function () {
         let VerifyUrl
         if (envVar === "prod") {
             VerifyUrl =
-                galaxyBaseUrl +
+                galaxyBaseUrlSwoole +
                 `/view/login/${gameName}?redirect_url=` +
                 redirectUrl
         } else if (envVar === "rc") {
             VerifyUrl =
-                galaxyBaseUrl +
+                galaxyBaseUrlSwoole +
                 `/view/login/${gameName}?redirect_url=` +
                 redirectUrl
         }
@@ -449,7 +450,7 @@ export default function () {
     // 10/User/DeleteUser 刪除玩家在銀河系統內的帳號
     if (envVar !== "prod") {
         group("/User/DeleteUser", function () {
-            const VerifyUrl = galaxyBaseUrl + "/User/DeleteUser"
+            const VerifyUrl = galaxyBaseUrlSwoole + "/User/DeleteUser"
             const body = {
                 UserObjectName: session.Results.UserObjectName,
                 DeleteAfterDays: 0,
