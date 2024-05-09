@@ -410,7 +410,7 @@ export default function () {
         let VerifyUrl
         if (envVar === "prod") {
             VerifyUrl =
-                galaxyBaseUrlSwoole +
+                galaxyBaseUrl +
                 `/view/login/${gameName}?redirect_url=` +
                 redirectUrl
         } else if (envVar === "rc") {
